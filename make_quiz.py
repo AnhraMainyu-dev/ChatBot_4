@@ -1,5 +1,6 @@
 import os
 
+
 def make_quiz(directory):
     quiz = {}
     question = None

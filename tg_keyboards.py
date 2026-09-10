@@ -1,4 +1,4 @@
-from telegram import KeyboardButton, ReplyKeyboardMarkup, Update
+from telegram import KeyboardButton, ReplyKeyboardMarkup
 
 
 def start_game_keyboard():

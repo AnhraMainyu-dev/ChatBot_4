@@ -1,7 +1,8 @@
-import redis
 import argparse
+
+import redis
 from decouple import config
-from telegram.ext import (Application, CallbackQueryHandler, CommandHandler,
+from telegram.ext import (Application, CommandHandler,
                           ConversationHandler, MessageHandler, filters)
 
 from make_quiz import make_quiz

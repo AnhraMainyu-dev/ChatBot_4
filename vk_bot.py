@@ -1,5 +1,6 @@
-import random
 import argparse
+import random
+
 import redis
 import vk_api as vk
 from decouple import config
