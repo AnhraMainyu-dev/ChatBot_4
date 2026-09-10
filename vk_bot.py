@@ -1,5 +1,5 @@
 import random
-
+import argparse
 import redis
 import vk_api as vk
 from decouple import config
@@ -36,8 +36,13 @@ def main():
     vk_api = vk_session.get_api()
 
     keyboard = add_keyboard()
-    quiz = make_quiz()
     db = redis.Redis(host="localhost", port=6379, decode_responses=True)
+
+    parser = argparse.ArgumentParser(description="ВК-бот викторины")
+    parser.add_argument("directory", help="директория с файлами для квиза")
+    args = parser.parse_args()
+    directory = args.directory
+    quiz = make_quiz(directory)
 
     longpoll = VkLongPoll(vk_session)
 
