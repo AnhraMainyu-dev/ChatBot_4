@@ -62,6 +62,9 @@ def main():
         elif db.get(event.peer_id) is not None:
             answer = event.text
             current_question = db.get(event.peer_id)
+            if not current_question:
+                send_message(vk_api, event, "Сначала нажмите 'Новый вопрос'", keyboard)
+                continue
             correct_answer = quiz[current_question].split(".")[0]
 
             if answer.lower() == correct_answer.lower():

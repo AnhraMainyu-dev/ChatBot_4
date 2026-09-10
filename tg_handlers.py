@@ -24,7 +24,6 @@ async def handle_new_question_request(update: Update, context: CallbackContext):
     question = random.choice(list(quiz))
     db = context.bot_data["db"]
     db.set(update.effective_chat.id, question)
-    context.bot_data["current_question"] = question
 
     await context.bot.send_message(
         chat_id=update.effective_chat.id,
@@ -58,7 +57,8 @@ async def handle_solution_attempt(update: Update, context: CallbackContext):
 
 
 async def handle_give_up(update: Update, context: CallbackContext):
-    question = context.bot_data["current_question"]
+    db = context.bot_data["db"]
+    question = db.get(update.effective_chat.id)
     quiz = context.bot_data["quiz"]
     correct_answer = quiz[question]
 
