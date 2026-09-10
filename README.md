@@ -4,6 +4,12 @@
 
 <img src="screenshots/img.png" height='300'><img src="screenshots/img_1.png" height='300'>
 
+Как работают боты можно увидеть по ссылкам:
+
+[Telegram](@devmanapilesson_bot)
+
+[VK](https://vk.ru/club241261130)
+
 ### Как установить
 Для работы с ботами требуются API-ключи бота в телеграме (можно получить по адресу [@BotFather](https://t.me/BotFather)) и вашей группы в ВК (получаются в настройках вашей группы после выдачи всех нужных разрешений).
 
